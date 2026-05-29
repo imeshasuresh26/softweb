@@ -256,7 +256,7 @@ contact.html
   </main>
 
   <footer>
-    <p>© 2025 The Midnight Spice | Designed and Developed by pavithra</p>
+    <p>© 2025 The Midnight Spice</p>
   </footer>
 </body>
 </html>
