@@ -1,4 +1,4 @@
-<img width="936" height="533" alt="Screenshot 2026-05-31 165052" src="https://github.com/user-attachments/assets/fc5561b3-3826-449f-b08f-3843fb6d444e" /># Ex.06 Restuarant Website
+## Ex.06 Restuarant Website
 ## Date:28.05.2026
 
 ## AIM:
