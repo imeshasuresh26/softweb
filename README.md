@@ -1,4 +1,4 @@
-# Ex.06 Restuarant Website
+<img width="936" height="533" alt="Screenshot 2026-05-31 165052" src="https://github.com/user-attachments/assets/fc5561b3-3826-449f-b08f-3843fb6d444e" /># Ex.06 Restuarant Website
 ## Date:28.05.2026
 
 ## AIM:
@@ -28,8 +28,279 @@ Validate the HTML code.
 Publish the website in the given URL.
 
 ## PROGRAM:
+home.html
+```
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>The Midnight Spice | Home</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header>
+    <h1>The Midnight Spice</h1>
+    <nav>
+      <a href="{% url 'home' %}" class="active">Home</a>
+      <a href="{% url 'menu' %}">Menu</a>
+      <a href="{% url 'chefs' %}">Chefs</a>
+      <a href="{% url 'contact' %}">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" style="background-image: url('{% static 'images/hero-bg.jpg' %}');">
+    <div class="hero-inner">
+      <h2>Serving Cravings After the Clock Strikes Midnight</h2>
+      <p class="lead">Taste the Heat Hidden in the Night.</p>
+      <button onclick="location.href='{% url 'menu' %}'">Explore Menu</button>
+    </div>
+  </section>
+
+  <section class="teaser">
+    <h3>Signature Picks</h3>
+    <div class="grid">
+      <div class="card">
+        <img src="{% static 'images/gobi-manchurian.jpg' %}" alt="Gobi Manchurian">
+        <p>Gobi Manchurian</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'images/pav-bhaji.jpg' %}" alt="Pav Bhaji">
+        <p>Pav Bhaji</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'images/samosa-plate.jpg' %}" alt="Samosa">
+        <p>Samosa Chaat</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 The Midnight Spice | Hot Bites. Cold Nights. Endless Cravings</p>
+  </footer>
+</body>
+</html>
+```
+menu.html
+```
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>The Midnight Spice | Menu</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header>
+    <h1>The Midnight Spice</h1>
+    <nav>
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'menu' %}" class="active">Menu</a>
+      <a href="{% url 'chefs' %}">Chefs</a>
+      <a href="{% url 'contact' %}">Contact</a>
+    </nav>
+  </header>
+
+  <main class="menu">
+    <h2>Our Menu — Veg Fast Food, Midnight Mood</h2>
+
+    <section class="menu-section">
+      <h3>Starters</h3>
+      <div class="grid">
+        <div class="item card">
+          <img src="{% static 'images/gobi-manchurian.jpg' %}" alt="Gobi Manchurian">
+          <h4>Gobi Manchurian</h4>
+          <p>Crispy cauliflower tossed in tangy Indo-Chinese glaze</p>
+          <span class="price">₹180</span>
+        </div>
+
+        <div class="item card">
+          <img src="{% static 'images/samosa-plate.jpg' %}" alt="Samosa Chaat">
+          <h4>Samosa Chaat</h4>
+          <p>Spiced potatoes, chutneys, and crunch</p>
+          <span class="price">₹80</span>
+        </div>
+
+        <div class="item card">
+          <img src="{% static 'images/paneer-tikka.jpg' %}" alt="Paneer Tikka">
+          <h4>Paneer Tikka</h4>
+          <p>Smoky cubes, charred edges, mint chutney</p>
+          <span class="price">₹170</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu-section">
+      <h3> Mains & Buns </h3>
+      <div class="grid">
+        <div class="item card">
+          <img src="{% static 'images/pav-bhaji.jpg' %}" alt="Pav Bhaji">
+          <h4>Pav Bhaji</h4>
+          <p>Buttery pav with rich masala bhaji</p>
+          <span class="price">₹140</span>
+        </div>
+
+        <div class="item card">
+          <img src="{% static 'images/chole-bhature.jpg' %}" alt="Chole Bhature">
+          <h4>Chole Bhature</h4>
+          <p>Fluffy bhature with spicy chole</p>
+          <span class="price">₹130</span>
+        </div>
+
+        <div class="item card">
+          <img src="{% static 'images/dessert.jpg' %}" alt="Choco Lave Cake">
+          <h4>Choco Lava Cake</h4>
+          <p>Rich, creamy, finished with chocolate ash</p>
+          <span class="price">₹300</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 The Midnight Spice | Taste the midnight flavor</p>
+  </footer>
+</body>
+</html>
+```
+chefs.html
+```
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>The Midnight Spice | Chefs</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header>
+    <h1>The Midnight Spice</h1>
+    <nav>
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'menu' %}">Menu</a>
+      <a href="{% url 'chefs' %}" class="active">Chefs</a>
+      <a href="{% url 'contact' %}">Contact</a>
+    </nav>
+  </header>
+
+  <main class="chefs">
+    <h2>Our Chefs</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="{% static 'images/chef1.jpg' %}" alt="Chef Meera">
+        <h3>Chef Meera</h3>
+        <p>Architect of the Gobi: smoke, crunch, and spice.</p>
+      </div>
+      <div class="card">
+        <img src="{% static 'images/chef2.jpg' %}" alt="Chef Arjun">
+        <h3>Chef Arjun</h3>
+        <p>Master of street flavors with a midnight plating twist.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 The Midnight Spice | Craft & spice</p>
+  </footer>
+</body>
+</html>
+```
+contact.html
+```
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>The Midnight Spice | Contact</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header>
+    <h1>The Midnight Spice</h1>
+    <nav>
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'menu' %}">Menu</a>
+      <a href="{% url 'chefs' %}">Chefs</a>
+      <a href="{% url 'contact' %}" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <main class="contact">
+    <h2>Contact & Reservation</h2>
+    <div class="contact-grid">
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="text" placeholder="Phone / WhatsApp" required>
+        <textarea placeholder="Message / Reservation details"></textarea>
+        <button type="submit">Send</button>
+      </form>
+
+      <div class="contact-info">
+        <img src="{% static 'images/contact-bg.jpg' %}" alt="Restaurant Interior">
+        <p>Visit us: Midnight Lane, City Center</p>
+        <p>Open: 7PM — 2AM</p>
+        <p>Phone: +91 90000 00000</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 The Midnight Spice | Designed and Developed by Imesha</p>
+  </footer>
+</body>
+</html>
+```
+views.py
+```
+from django.shortcuts import render
+
+def home(request):
+    return render(request, 'home.html')
+
+def menu(request):
+    return render(request, 'menu.html')
+
+def chefs(request):
+    return render(request, 'chefs.html')
+
+def contact(request):
+    return render(request, 'contact.html')
+```
+urls.py
+```
+from django.contrib import admin
+from django.urls import path
+from softapp import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.home, name='home'),
+    path('menu/', views.menu, name='menu'),
+    path('chefs/', views.chefs, name='chefs'),
+    path('contact/', views.contact, name='contact'),
+]
+```
 
 ## OUTPUT:
+<img width="936" height="533" alt="Screenshot 2026-05-31 165052" src="https://github.com/user-attachments/assets/fb39330e-aa2c-424b-8f05-8aa0ca4cb136" />
+<img width="1382" height="807" alt="image" src="https://github.com/user-attachments/assets/3292e34a-1397-4315-9db1-9ec3f5f7b1ba" />
+<img width="1383" height="807" alt="Screenshot 2026-05-31 165746" src="https://github.com/user-attachments/assets/95b0c254-df0c-4bba-9c7f-fd6135c7fb6d" />
+<img width="1158" height="672" alt="Screenshot 2026-05-31 170536" src="https://github.com/user-attachments/assets/adf56ee4-4682-439f-863b-892ab8af9e6e" />
+<img width="1152" height="643" alt="image" src="https://github.com/user-attachments/assets/afa58e20-1cb8-4bbe-9e8a-8e5e52d0f9de" />
+
+
+
+
+
+
 
 
 
